@@ -1,0 +1,17 @@
+.report-preview-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: floralwhite; }
+  .report-preview-container div {
+    padding: 0 10px;
+    flex: 0 33%; }
+
+.report-preview-inner {
+  display: flex; }
+  .report-preview-inner div {
+    padding: 0 10px;
+    flex: 0 33%; }
+
+/*# sourceMappingURL=ReportPreview.css.map */
