@@ -1,6 +1,13 @@
+@font-face {
+  font-family: 'Adam CG Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/ADAM.CG PRO.otf"); }
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  text-align: center;
-}
+  font-family: 'Adam CG Pro';
+  font-size: 16px;
+  max-width: 1200px; }
+
+/*# sourceMappingURL=index.css.map */

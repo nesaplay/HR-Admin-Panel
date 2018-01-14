@@ -1,0 +1,6 @@
+export const TEST = 'TEST_ACTION';
+
+// Fetch reports
+export const FETCH_REPORTS = 'FETCH_REPORTS';
+export const FETCH_REPORTS_SUCCESS = 'FETCH_REPORTS_SUCCESS';
+export const FETCH_REPORTS_ERROR = 'FETCH_REPORTS_ERROR';
