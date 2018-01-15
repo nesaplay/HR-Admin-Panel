@@ -1,18 +1,10 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import React from 'react';
 
 import Header from './components/Header';
 import Main from './components/Main';
 
-class App extends Component {
-	render() {
-		return (
-			<div>
-				<Header />
-				<Main />
-			</div>
-		);
-	}
-}
+const App = () => [
+	<Header key={'header'} />, 
+	<Main key={'main'} />];
 
 export default App;
