@@ -1,0 +1,14 @@
+.search-field input {
+  width: 250px;
+  background: #fcfcfc;
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  font-size: inherit;
+  text-indent: 32px;
+  padding: 5px;
+  background-image: url("https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png");
+  background-repeat: no-repeat;
+  background-size: 30px 25px;
+  background-position: left; }
+
+/*# sourceMappingURL=Search.css.map */
