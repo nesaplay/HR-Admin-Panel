@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './Home';
-import Error404 from './Error404';
+import Home from './dashboard/Home';
+import Error404 from './common/Error404';
 import '../css/Main.css';
 
 class Main extends Component {

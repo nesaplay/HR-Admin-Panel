@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/ReportPreview.css';
+import '../../css/ReportPreview.css';
 
 const ReportPreview = props => {
     const { companyName, candidateName, interviewDate, status } = props;
