@@ -7,11 +7,16 @@ import {
 import { fetch } from '../services/fetch';
 
 function* workerFetchReports(action) {
+    const options = {
+        method: 'get',
+        url: 'reports'
+    }
+    
     try {
-        const data = yield call(fetch, 'reports');
+        const data = yield call(fetch, options);
         yield put({ type: FETCH_REPORTS_SUCCESS, payload: data.data })
     } catch (error) {
-        yield put({ type: FETCH_REPORTS_ERROR, payload: error.data })
+        yield put({ type: FETCH_REPORTS_ERROR, error: error.data })
     }
 }
 

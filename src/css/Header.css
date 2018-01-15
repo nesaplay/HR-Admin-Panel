@@ -10,5 +10,8 @@
 button {
   padding: 5px 20px;
   font-family: inherit; }
+  button a {
+    text-decoration: none;
+    color: inherit; }
 
 /*# sourceMappingURL=Header.css.map */

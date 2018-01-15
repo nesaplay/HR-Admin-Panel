@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import test from './test_reducer';
+import search from './search_reducer';
 import reports from './reports_reducer';
+import remove from './delete_reducer';
 
 const rootReducer = combineReducers({
-    test,
-    reports
+    search,
+    reports,
+    remove
 })
 
 export default rootReducer;

@@ -1,11 +1,10 @@
 import {
-	FETCH_REPORTS,
-	FETCH_REPORTS_SUCCESS,
-	FETCH_REPORTS_ERROR
+    DELETE_REPORT,
+    DELETE_REPORT_ERROR,
+    DELETE_REPORT_SUCCESS
 } from '../actions/types';
 
 const initState = {
-	data: [],
 	isLoading: false,
     isLoaded: false,
     error: null
@@ -13,20 +12,19 @@ const initState = {
 
 export default function(state = initState, action) {
 	switch (action.type) {
-        case FETCH_REPORTS:
+        case DELETE_REPORT:
             return {
                 ...state,
                 isLoading: true,
                 error: null
             }
-        case FETCH_REPORTS_SUCCESS:
+        case DELETE_REPORT_SUCCESS:
             return {
                 ...state,
-                data: action.payload,
                 isLoading: false,
                 isLoaded: true
             }
-        case FETCH_REPORTS_ERROR:
+        case DELETE_REPORT_ERROR:
             return {
                 ...state,
                 isLoading: false,

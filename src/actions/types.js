@@ -1,6 +1,14 @@
-export const TEST = 'TEST_ACTION';
+// Search reports
+export const SEARCH_INIT = 'SEARCH_INIT';
+export const SEARCH_RENDER = 'SEARCH_RENDER';
 
 // Fetch reports
 export const FETCH_REPORTS = 'FETCH_REPORTS';
 export const FETCH_REPORTS_SUCCESS = 'FETCH_REPORTS_SUCCESS';
 export const FETCH_REPORTS_ERROR = 'FETCH_REPORTS_ERROR';
+
+// Delete report
+
+export const DELETE_REPORT = 'DELETE_REPORT';
+export const DELETE_REPORT_SUCCESS = 'DELETE_REPORT_SUCCESS';
+export const DELETE_REPORT_ERROR = 'DELETE_REPORT_ERROR';
