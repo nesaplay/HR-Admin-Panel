@@ -7,8 +7,8 @@ const Header = () => {
 		<header>
 			<div className="header-wrapper">
 				<nav className="nav-wrapper">
-					<span>Reports Administration</span>
-					<div>
+					<span className="nav-title">Reports Administration</span>
+					<div className='nav-links'>
 						<button>
 							<Link to="/">Reports</Link>
 						</button>

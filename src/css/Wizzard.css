@@ -1,0 +1,83 @@
+.wizzard-wrapper {
+  display: flex; }
+
+.wizzard-nav {
+  flex: 0 25%;
+  border-right: 2px solid #04030f;
+  min-height: 100vh; }
+
+.wizzard-content {
+  flex: 0 75%;
+  padding-left: 20px; }
+  .wizzard-content .search-field {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-end; }
+
+.wizzard-content-list {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 0; }
+  .wizzard-content-list .active {
+    background-color: #91b7c7; }
+  .wizzard-content-list li {
+    flex: 0 48%;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    border: 5px solid #91b7c7;
+    margin-bottom: 20px; }
+    .wizzard-content-list li:nth-child(2n-1) {
+      margin-right: 20px; }
+    .wizzard-content-list li:hover {
+      background-color: #91b7c7;
+      cursor: pointer; }
+    .wizzard-content-list li .list-item-wrapper {
+      display: flex;
+      justify-content: space-between; }
+      .wizzard-content-list li .list-item-wrapper img {
+        max-width: 100%;
+        max-height: 100%; }
+      .wizzard-content-list li .list-item-wrapper div:first-of-type {
+        flex: 0 20%; }
+      .wizzard-content-list li .list-item-wrapper div:last-of-type {
+        padding-top: 15px;
+        flex: 0 70%; }
+    .wizzard-content-list li .profile-email {
+      color: #b3bdc7;
+      font-size: 10px;
+      padding: 0;
+      margin: 0; }
+    .wizzard-content-list li .profile-name {
+      padding: 0;
+      margin: 0; }
+  .wizzard-content-list li.companies {
+    flex: 0 100%;
+    text-align: center; }
+    .wizzard-content-list li.companies:nth-child(2n-1) {
+      margin-right: 0px; }
+    .wizzard-content-list li.companies .company-wrapper {
+      padding: 10px 0; }
+
+.wizzard-content-nav {
+  display: flex;
+  justify-content: space-between; }
+  .wizzard-content-nav button {
+    height: 50px;
+    width: 100px;
+    border: none;
+    padding: 5px 20px;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #91b7c7;
+    cursor: pointer; }
+    .wizzard-content-nav button:hover:enabled {
+      background-color: #dee7e7;
+      border: 5px solid #91b7c7; }
+
+.wizzard-content-form {
+  padding: 20px 0; }
+
+/*# sourceMappingURL=Wizzard.css.map */

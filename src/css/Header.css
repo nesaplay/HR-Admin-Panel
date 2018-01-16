@@ -8,14 +8,26 @@ header {
 
 .nav-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; }
+
+.nav-title {
   padding: 20px 0; }
 
-button {
-  padding: 5px 20px;
-  font-family: inherit; }
-  button a {
-    text-decoration: none;
-    color: inherit; }
+.nav-links {
+  height: inherit; }
+  .nav-links button {
+    height: 100%;
+    border: none;
+    padding: 5px 20px;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: #91B7C7; }
+    .nav-links button a {
+      text-decoration: none;
+      display: block;
+      color: inherit; }
+    .nav-links button:hover {
+      background-color: #DEE7E7;
+      cursor: pointer; }
 
 /*# sourceMappingURL=Header.css.map */

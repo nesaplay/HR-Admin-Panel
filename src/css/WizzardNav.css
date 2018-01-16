@@ -1,0 +1,13 @@
+.wizzard-nav {
+  padding-right: 20px; }
+
+.wizzard-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .wizzard-nav-list li {
+    padding: 20px 0 20px 20px; }
+  .wizzard-nav-list .active {
+    background-color: #91B7C7; }
+
+/*# sourceMappingURL=WizzardNav.css.map */

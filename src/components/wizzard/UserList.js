@@ -1,9 +1,41 @@
 import React from 'react';
+import { IMG_PLACEHOLDER } from '../../constants';
 
-export default () => {
-    return (
-        <div>
-            UserList
-        </div>
-    );
+export default ({
+	data,
+	error,
+	isLoading,
+	idClicked,
+	isSelected,
+	selectedUser
+}) => {
+	const renderUsers = () =>
+		data.map(user => (
+			<li
+				key={user.id}
+				onClick={() => idClicked(user.id)}
+				className={
+					isSelected && selectedUser === user.id ? 'active' : ''
+				}
+			>
+				<div className="list-item-wrapper">
+					<div>
+						<img
+							src={user.avatar ? user.avatar : IMG_PLACEHOLDER}
+							alt="profile-icon"
+						/>
+					</div>
+					<div>
+						<p className="profile-name">{user.name}</p>
+						<p className="profile-email">{user.email}</p>
+					</div>
+				</div>
+			</li>
+		));
+
+	return isLoading ? (
+		<p>Loading...</p>
+	) : (
+		<ul className="wizzard-content-list">{renderUsers()}</ul>
+	);
 };
