@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import ReportPreview from './ReportPreview';
-import Search from '../common/Search';
-import initModal from '../common/Modal';
-import * as actions from '../../actions/index';
-import '../../css/Home.css';
+import ReportPreview from '../components/dashboard/ReportPreview';
+import Search from '../components/common/Search';
+import initModal from '../components/common/Modal';
+import * as actions from '../actions/index';
+import '../css/Home.css';
 
 class Home extends Component {
 	constructor(props) {
@@ -43,8 +43,8 @@ class Home extends Component {
 	}
 
 	render() {
-		const { isLoading, data } = this.props.reports;
-		const { searchReports } = this.props;
+		const { searchReports, reports } = this.props;
+		const { isLoading, data } = reports;
 
 		return (
 			<div className="candidates-list-wrapper">

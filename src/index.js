@@ -9,7 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './css/index.css';
 import reducers from './reducers';
 import rootSaga from './sagas/index';
-import App from './App';
+import App from './routes/App';
 
 const sagaMiddleware = createSagaMiddleware();
 const createStoreWithMiddleware = applyMiddleware(sagaMiddleware)(createStore);

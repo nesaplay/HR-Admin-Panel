@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from './dashboard/Home';
-import Error404 from './common/Error404';
+import Home from '../containers/Home';
+import Wizzard from './Wizzard';
+import Error404 from '../components/common/Error404';
 import '../css/Main.css';
 
 class Main extends Component {
@@ -11,6 +12,7 @@ class Main extends Component {
 			<main className='main-wrapper'>
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route exact path="/wizzard" component={Wizzard} />
 					<Route path="*" component={Error404} />
 				</Switch>
 			</main>
