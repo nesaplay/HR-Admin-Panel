@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import Home from '../containers/Home';
-import Wizzard from './Wizzard';
+import Wizzard from './containers/Wizzard';
 import Error404 from '../components/common/Error404';
 import '../css/Main.css';
 
