@@ -3,11 +3,23 @@
   font-style: normal;
   font-weight: 400;
   src: url("./fonts/ADAM.CG PRO.otf"); }
-body {
-  margin: 0;
-  padding: 0;
+html {
   font-family: 'Adam CG Pro';
   font-size: 16px;
-  max-width: 1200px; }
+  color: #04030F;
+  box-sizing: border-box; }
+
+*::after, *::before {
+  box-sizing: inherit; }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh; }
+
+body {
+  margin: 0 auto;
+  padding: 0; }
 
 /*# sourceMappingURL=index.css.map */

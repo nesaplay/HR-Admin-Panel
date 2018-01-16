@@ -9,12 +9,13 @@ import '../css/Main.css';
 class Main extends Component {
 	render() {
 		return (
-			<main className='main-wrapper'>
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/wizzard" component={Wizzard} />
-					<Route path="*" component={Error404} />
-				</Switch>
+			<main>
+				<div className="main-wrapper">
+					<Switch>
+						<Route exact path="/" component={Home} />
+						<Route path="*" component={Error404} />
+					</Switch>
+				</div>
 			</main>
 		);
 	}
