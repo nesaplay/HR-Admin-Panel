@@ -1,4 +1,4 @@
-import { takeLatest, call, put } from 'redux-saga/effects';
+import { takeEvery, call, put } from 'redux-saga/effects';
 import { fetch } from '../services/fetch';
 import { UPLOAD_REPORT, UPLOAD_REPORT_ERROR, UPLOAD_REPORT_SUCCESS } from '../actions/types';
 

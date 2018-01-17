@@ -77,20 +77,20 @@
 			padding: 0;
 			margin: 0;
 		}
-    }
-    
-    li.companies {
-        flex: 0 100%;
-        text-align: center;
+	}
 
-        &:nth-child(2n-1) {
+	li.companies {
+		flex: 0 100%;
+		text-align: center;
+
+		&:nth-child(2n-1) {
 			margin-right: 0px;
-        }
-        
-        .company-wrapper {
-            padding: 10px 0;
-        }
-    }
+		}
+
+		.company-wrapper {
+			padding: 10px 0;
+		}
+	}
 }
 
 .wizzard-content-nav {
@@ -99,7 +99,7 @@
 
 	button {
 		height: 50px;
-		width: 100px;
+		width: 120px;
 		border: none;
 		padding: 5px 20px;
 		font-family: inherit;
@@ -120,4 +120,58 @@
 
 .wizzard-content-form {
 	padding: 20px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	.form-item {
+		flex: 0 30%;
+		padding: 10px 0;
+
+		select,
+		input {
+			width: 100%;
+		}
+
+		textarea {
+			min-height: 150px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		span {
+			display: block;
+		}
+
+		&:nth-child(4) {
+			flex: 0 100%;
+			padding-bottom: 0px;
+		}
+	}
+
+	.submit-container {
+		width: 100%;
+		text-align: right;
+		display: block;
+		position: relative;
+
+		button {
+			height: 50px;
+			width: 120px;
+			border: none;
+			padding: 5px 20px;
+			font-family: inherit;
+			font-size: inherit;
+			background-color: #91b7c7;
+			cursor: pointer;
+			position: absolute;
+			top: 20px;
+			right: 0px;
+
+			&:hover:enabled {
+				background-color: #dee7e7;
+				border: 5px solid #91b7c7;
+			}
+		}
+	}
 }
