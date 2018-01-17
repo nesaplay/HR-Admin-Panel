@@ -6,22 +6,30 @@ export default ({
 	isLoading,
 	idClicked,
 	isSelected,
-	selectedCompany
+	selectedCompany,
+	query
 }) => {
-	const renderCompanies = () =>
-		data.map(company => (
-			<li
-				key={company.id}
-				onClick={() => idClicked(company.id)}
-				className={['companies', 
-					isSelected && selectedCompany === company.id ? 'active' : ''
-				].join(' ')}
-			>
-				<div className="company-wrapper">
+	const renderCompanies = () => {
+		const filter = report =>
+			report.name.toLowerCase().includes(query.toLowerCase());
+
+		return data
+			.filter(filter)
+			.map(company => (
+				<li
+					key={company.id}
+					onClick={() => idClicked(company.id)}
+					className={[
+						'companies',
+						isSelected && selectedCompany === company.id ? 'active' : ''
+					].join(' ')}
+				>
+					<div className="company-wrapper">
 						<p className="profile-name">{company.name}</p>
-				</div>
-			</li>
+					</div>
+				</li>
 		));
+	};
 
 	return isLoading ? (
 		<p>Loading...</p>

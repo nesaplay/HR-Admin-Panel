@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../css/Search.css';
 
-export default ({ searchQuery }) => {
+export default ({ searchQueryHandler }) => {
 	let query;
-
+	
 	return (
 		<label className="search-field">
 			<input
@@ -11,7 +11,7 @@ export default ({ searchQuery }) => {
 				name="search"
 				placeholder="Search..."
 				ref={el => (query = el)}
-				onChange={() => searchQuery(query.value)}
+				onChange={() => searchQueryHandler(query.value)}
 			/>
 		</label>
 	);

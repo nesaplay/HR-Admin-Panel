@@ -7,31 +7,38 @@ export default ({
 	isLoading,
 	idClicked,
 	isSelected,
-	selectedUser
+	selectedUser,
+	query
 }) => {
-	const renderUsers = () =>
-		data.map(user => (
-			<li
-				key={user.id}
-				onClick={() => idClicked(user.id)}
-				className={
-					isSelected && selectedUser === user.id ? 'active' : ''
-				}
-			>
-				<div className="list-item-wrapper">
-					<div>
-						<img
-							src={user.avatar ? user.avatar : IMG_PLACEHOLDER}
-							alt="profile-icon"
-						/>
+	const renderUsers = () => {
+		const filter = report =>
+			report.name.toLowerCase().includes(query.toLowerCase());
+
+		return data
+			.filter(filter)
+			.map(user => (
+				<li
+					key={user.id}
+					onClick={() => idClicked(user.id)}
+					className={
+						isSelected && selectedUser === user.id ? 'active' : ''
+					}
+				>
+					<div className="list-item-wrapper">
+						<div>
+							<img
+								src={user.avatar ? user.avatar : IMG_PLACEHOLDER}
+								alt="profile-icon"
+							/>
+						</div>
+						<div>
+							<p className="profile-name">{user.name}</p>
+							<p className="profile-email">{user.email}</p>
+						</div>
 					</div>
-					<div>
-						<p className="profile-name">{user.name}</p>
-						<p className="profile-email">{user.email}</p>
-					</div>
-				</div>
-			</li>
+				</li>
 		));
+	};
 
 	return isLoading ? (
 		<p>Loading...</p>

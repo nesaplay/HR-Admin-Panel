@@ -11,7 +11,7 @@ import {
 } from './types';
 
 // Action creators
-export const searchReports = query => ({ type: SEARCH_INIT, payload: query });
+export const searching = query => ({ type: SEARCH_INIT, payload: query });
 export const deleteReport = id => ({ type: DELETE_REPORT, payload: id });
 export const fetchReports = () => ({ type: FETCH_REPORTS });
 export const fetchUsers = () => ({ type: FETCH_USERS });

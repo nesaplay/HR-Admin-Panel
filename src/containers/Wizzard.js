@@ -13,13 +13,18 @@ import '../css/Wizzard.css';
 class Wizzard extends Component {
 	constructor(props) {
 		super(props);
-		this.userClicked = this.userClicked.bind(this);
-		this.companyClicked = this.companyClicked.bind(this);
 		this.buttonStatus = this.buttonStatus.bind(this);
 	}
 
+	initWizzard() {
+		const { fetchUsers, fetchCompanies } = this.props;
+
+		fetchUsers();
+		fetchCompanies();
+	}
+
 	buttonStatus() {
-		const { stage, users, companies, reports } = this.props.wizzard;
+		const { stage, users, companies } = this.props.wizzard;
 		const activeUser = users.isSelected;
 		const activeCompany = companies.isSelected;
 
@@ -34,45 +39,56 @@ class Wizzard extends Component {
 		}
 
 		return false;
-
-	}
-	
-	userClicked(id) {
-		this.props.userSelected(id);
-	}
-
-	companyClicked(id) {
-		this.props.companySelected(id);
 	}
 
 	componentDidMount() {
-		const { fetchUsers, fetchCompanies } = this.props;
-		fetchUsers();
-		fetchCompanies();
+		this.initWizzard();
 	}
 
 	render() {
-		const { stage, users, companies } = this.props.wizzard;
-		const { stageUp, stageDown, wizzard } = this.props;
+		const { search,
+				stageUp, 
+				wizzard, 
+				searching, 
+				stageDown, 
+				userSelected, 
+				companySelected, 
+			} = this.props;
+		const { stage, users, companies } = wizzard;
+
 		return (
 			<div className="wizzard-wrapper">
 				<div className="wizzard-nav">
 					<WizzardNav stage={stage} />
 				</div>
 				<div className="wizzard-content">
-					{stage && stage !== 3 ? <Search /> : ''}
-					{stage && stage === 1 ? <UserList {...users} idClicked={this.userClicked} /> : ''}
-					{stage && stage === 2 ? <CompanyList {...companies} idClicked={this.companyClicked} /> : ''}
-					{stage && stage === 3 ? <FillReport {...wizzard} /> : ''}
+					{stage && stage !== 3 && <Search searchQueryHandler={searching} />}
+					{stage && stage === 1 && <UserList {...users} {...search} idClicked={id => userSelected(id)} />}
+					{stage && stage === 2 && <CompanyList {...companies} {...search} idClicked={id => companySelected(id)} />}
+					{stage && stage === 3 && <FillReport {...wizzard} />}
 					<div className='wizzard-content-nav'>
-						<button disabled={stage & stage === 1 ? 'disabled' : ''} onClick={stageDown}>back</button>
-						<button disabled={this.buttonStatus() ? '' : 'disabled'} onClick={stageUp}>next</button>
+						<button 
+							disabled={stage && stage === 1 ? 'disabled' : ''} 
+							onClick={stageDown}>
+								back
+						</button>
+						<button 
+							disabled={this.buttonStatus() ? '' : 'disabled'} 
+							className={stage && stage === 3 ? 'hide' : ''}
+							onClick={stageUp}>
+								next
+						</button>
+						<button 
+							className={stage && stage !== 3 ? 'hide' : ''} 
+							onClick={stageUp}>
+							submit
+						</button>
 					</div>
 				</div>
 			</div>
 		);
 	}
 }
-const mapStateToProps = ({ wizzard }) => ({ wizzard });
+const mapStateToProps = ({ wizzard, search }) => ({ wizzard, search });
 
 export default connect(mapStateToProps, actions)(Wizzard);

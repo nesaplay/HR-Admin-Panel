@@ -1,6 +1,7 @@
 // Search reports
 export const SEARCH_INIT = 'SEARCH_INIT';
 export const SEARCH_RENDER = 'SEARCH_RENDER';
+export const SEARCH_RESET = 'SEARCH_RESET';
 
 // Fetch reports
 export const FETCH_REPORTS = 'FETCH_REPORTS';

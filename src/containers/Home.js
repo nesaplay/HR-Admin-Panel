@@ -8,22 +8,11 @@ import * as actions from '../actions/index';
 import '../css/Home.css';
 
 class Home extends Component {
-	constructor(props) {
-		super(props);
-		this.searchQuery = this.searchQuery.bind(this);
-		this.handleDelete = this.handleDelete.bind(this);
-	}
-
-	searchQuery(query) {
-		this.props.searchReports(query);
-	}
-
-	handleDelete(id) {
-		this.props.deleteReport(id);
-	}
 
 	renderReports(data) {
 		const { query } = this.props.search;
+		const { deleteReport } = this.props;
+
 		const filter = report =>
 			report.candidateName.toLowerCase().includes(query.toLowerCase());
 
@@ -32,7 +21,7 @@ class Home extends Component {
 			.map(report => 
 				<ReportPreview 
 					key={report.id}
-					handleDelete={this.handleDelete}
+					handleDelete={deleteReport}
 					initModal={initModal} 
 					{...report} 
 				/>);
@@ -43,12 +32,12 @@ class Home extends Component {
 	}
 
 	render() {
-		const { searchReports, reports } = this.props;
+		const { searching, reports } = this.props;
 		const { isLoading, data } = reports;
 
 		return (
 			<div className="candidates-list-wrapper">
-				<Search searchQuery={searchReports} />
+				<Search searchQueryHandler={searching} />
 				{isLoading ? <p>Loading ...</p> : this.renderReports(data)}
 			</div>
 		);

@@ -1,4 +1,4 @@
-import { SEARCH_RENDER } from '../actions/types';
+import { SEARCH_RENDER, SEARCH_RESET } from '../actions/types';
 
 export default function(state = { query: '' }, action) {
 	switch (action.type) {
@@ -7,6 +7,11 @@ export default function(state = { query: '' }, action) {
 				...state,
 				query: action.payload
 			};
+		case SEARCH_RESET:
+			return {
+				...state,
+				query: ''
+			}
 		default:
 			return state;
 	}
