@@ -66,7 +66,7 @@
   justify-content: space-between; }
   .wizzard-content-nav button {
     height: 50px;
-    width: 100px;
+    width: 120px;
     border: none;
     padding: 5px 20px;
     font-family: inherit;
@@ -80,6 +80,44 @@
     display: none; }
 
 .wizzard-content-form {
-  padding: 20px 0; }
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .wizzard-content-form .form-item {
+    flex: 0 30%;
+    padding: 10px 0; }
+    .wizzard-content-form .form-item select,
+    .wizzard-content-form .form-item input {
+      width: 100%; }
+    .wizzard-content-form .form-item textarea {
+      min-height: 150px;
+      width: 100%;
+      box-sizing: border-box; }
+    .wizzard-content-form .form-item span {
+      display: block; }
+    .wizzard-content-form .form-item:nth-child(4) {
+      flex: 0 100%;
+      padding-bottom: 0px; }
+  .wizzard-content-form .submit-container {
+    width: 100%;
+    text-align: right;
+    display: block;
+    position: relative; }
+    .wizzard-content-form .submit-container button {
+      height: 50px;
+      width: 120px;
+      border: none;
+      padding: 5px 20px;
+      font-family: inherit;
+      font-size: inherit;
+      background-color: #91b7c7;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 0px; }
+      .wizzard-content-form .submit-container button:hover:enabled {
+        background-color: #dee7e7;
+        border: 5px solid #91b7c7; }
 
 /*# sourceMappingURL=Wizzard.css.map */

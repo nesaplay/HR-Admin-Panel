@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../css/ReportPreview.css';
+import { VIEW_IMAGE, DELETE_IMAGE } from '../../constants';
 
 const ReportPreview = ({
 	companyName,
@@ -58,10 +59,10 @@ const ReportPreview = ({
 				<div>{status}</div>
 				<div className="preview-icons">
 					<div className="preview-modal" onClick={openModal}>
-						O
+						<img src={VIEW_IMAGE} alt='O'/>
 					</div>
 					<div className="preview-delete" onClick={deleteInit}>
-						X
+						<img src={DELETE_IMAGE} alt='X' />
 					</div>
 				</div>
 			</div>

@@ -1,12 +1,11 @@
 .report-preview-container {
     display: flex;
     justify-content: flex-start;
-	padding: 10px;
+    padding: 10px;
 	margin: 20px auto;
 	background-color: #91B7C7;
 
 	div {
-        padding: 0 10px;
         flex: 0 33%;
 	}
 }
@@ -30,6 +29,11 @@
 
     div {
         flex: 0 50%;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
     }
 }
 
