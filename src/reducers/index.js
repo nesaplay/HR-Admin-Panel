@@ -8,7 +8,7 @@ const rootReducer = combineReducers({
 	search,
 	reports,
 	remove,
-	wizzard
+	wizzard,
 });
 
 export default rootReducer;
