@@ -73,12 +73,11 @@
     font-size: inherit;
     background-color: #91b7c7;
     cursor: pointer; }
-    .wizzard-content-nav .hide {
-        display: none;
-    }
     .wizzard-content-nav button:hover:enabled {
       background-color: #dee7e7;
       border: 5px solid #91b7c7; }
+  .wizzard-content-nav .hide {
+    display: none; }
 
 .wizzard-content-form {
   padding: 20px 0; }
