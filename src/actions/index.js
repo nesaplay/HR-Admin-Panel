@@ -7,7 +7,8 @@ import {
 	USER_SELECTED,
 	COMPANY_SELECTED,
 	STAGE_UP,
-	STAGE_DOWN
+	STAGE_DOWN,
+	WIZZARD_RESET
 } from './types';
 
 // Action creators
@@ -20,3 +21,4 @@ export const userSelected = (id) => ({ type: USER_SELECTED, id });
 export const companySelected = (id) => ({ type: COMPANY_SELECTED, id });
 export const stageUp = () => ({ type: STAGE_UP });
 export const stageDown = () => ({ type: STAGE_DOWN });
+export const resetWizzard = () => ({ type: WIZZARD_RESET });

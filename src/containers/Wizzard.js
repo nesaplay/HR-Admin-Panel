@@ -11,14 +11,11 @@ import * as actions from '../actions/index';
 import '../css/Wizzard.css';
 
 class Wizzard extends Component {
-	constructor(props) {
-		super(props);
-		this.buttonStatus = this.buttonStatus.bind(this);
-	}
 
 	initWizzard() {
-		const { fetchUsers, fetchCompanies } = this.props;
+		const { fetchUsers, fetchCompanies, resetWizzard } = this.props;
 
+		resetWizzard();
 		fetchUsers();
 		fetchCompanies();
 	}
@@ -33,9 +30,6 @@ class Wizzard extends Component {
 		}
 		if (stage === 2 && activeCompany) {
 			return true;
-		}
-		if (stage === 3) {
-			return false
 		}
 
 		return false;

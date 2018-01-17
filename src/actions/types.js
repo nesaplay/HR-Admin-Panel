@@ -30,3 +30,6 @@ export const FETCH_COMPANIES_ERROR = 'FETCH_COMPANIES_ERROR';
 // Stage walk
 export const STAGE_UP = 'STAGE_UP';
 export const STAGE_DOWN = 'STAGE_DOWN';
+
+// Wizard reset
+export const WIZZARD_RESET = 'WIZZARD_RESET';

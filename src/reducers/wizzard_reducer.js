@@ -8,7 +8,8 @@ import {
 	FETCH_COMPANIES,
 	FETCH_COMPANIES_SUCCESS,
 	FETCH_COMPANIES_ERROR,
-    COMPANY_SELECTED
+    COMPANY_SELECTED,
+    WIZZARD_RESET
 } from '../actions/types';
 
 const initState = {
@@ -30,7 +31,7 @@ const initState = {
 		error: null
 	},
 	report: {
-		data: [],
+		data: {},
 		isCompleted: false,
 		error: null
 	}
@@ -132,6 +133,7 @@ export default function(state = initState, action) {
 				}
 			};
 
+		// utilities sub-reducer
 		case STAGE_UP:
 			return {
 				...state,
@@ -142,6 +144,9 @@ export default function(state = initState, action) {
 				...state,
 				stage: state.stage - 1
 			};
+		case WIZZARD_RESET:
+			return initState;
+			
 		default:
 			return state;
 	}
