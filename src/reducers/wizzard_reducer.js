@@ -120,7 +120,7 @@ export default function(state = initState, action) {
 				users: {
 					...state.users,
 					isSelected: true,
-					selectedUser: action.id
+					selectedUser: action.user
 				}
 			};
 		case COMPANY_SELECTED:
@@ -129,7 +129,7 @@ export default function(state = initState, action) {
 				companies: {
 					...state.companies,
 					isSelected: true,
-					selectedCompany: action.id
+					selectedCompany: action.company
 				}
 			};
 

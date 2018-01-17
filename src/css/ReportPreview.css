@@ -12,14 +12,13 @@
   .report-preview-inner div {
     padding: 0 10px;
     flex: 0 33%; }
-    .report-preview-inner div:hover {
-      background-color: #DEE7E7;
-      cursor: pointer; }
 
 .preview-icons {
   display: flex; }
   .preview-icons div {
     flex: 0 50%; }
+    .preview-icons div:hover {
+      cursor: pointer; }
   .preview-icons img {
     max-width: 100%;
     max-height: 100%; }

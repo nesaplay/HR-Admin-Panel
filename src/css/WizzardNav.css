@@ -5,8 +5,15 @@
   list-style: none;
   margin: 0;
   padding: 0; }
+  .wizzard-nav-list:first-of-type {
+    border-bottom: 2px solid #04030f; }
   .wizzard-nav-list li {
     padding: 20px 0 20px 20px; }
+    .wizzard-nav-list li span {
+      color: #868688;
+      font-size: 14px;
+      display: block;
+      padding: 10px 0; }
   .wizzard-nav-list .active {
     background-color: #91B7C7; }
 

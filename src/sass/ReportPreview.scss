@@ -17,10 +17,6 @@
         padding: 0 10px;
         flex: 0 33%;
         
-        &:hover {
-            background-color: #DEE7E7;
-            cursor: pointer;
-        }
     }
 }
 
@@ -29,6 +25,10 @@
 
     div {
         flex: 0 50%;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     img {

@@ -4,6 +4,7 @@ import { REPORT_PHASES, REPORT_STATUSES } from '../../constants';
 
 export default ({ users, companies, submitForm }) => {
 	let date, status, phase, note;
+	let errors = {};
 	let report = {};
 
 	function validateForm(e) {

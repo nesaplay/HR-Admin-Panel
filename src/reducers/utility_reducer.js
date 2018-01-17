@@ -4,7 +4,8 @@ import {
 	DELETE_REPORT_SUCCESS,
 	UPLOAD_REPORT,
     UPLOAD_REPORT_SUCCESS,
-    UPLOAD_REPORT_ERROR
+    UPLOAD_REPORT_ERROR,
+    UTIL_RESET
 } from '../actions/types';
 
 const initState = {
@@ -76,6 +77,8 @@ export default function(state = initState, action) {
 					error: action.error
 				}
 			};
+		case UTIL_RESET:
+			return initState;
 		default:
 			return state;
 	}

@@ -19,7 +19,7 @@ export default ({
 			.map(user => (
 				<li
 					key={user.id}
-					onClick={() => idClicked(user.id)}
+					onClick={() => idClicked(user)}
 					className={
 						isSelected && selectedUser === user.id ? 'active' : ''
 					}

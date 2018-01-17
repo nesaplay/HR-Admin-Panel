@@ -36,5 +36,6 @@ export const FETCH_COMPANIES_ERROR = 'FETCH_COMPANIES_ERROR';
 export const STAGE_UP = 'STAGE_UP';
 export const STAGE_DOWN = 'STAGE_DOWN';
 
-// Wizard reset
+// Reset
 export const WIZZARD_RESET = 'WIZZARD_RESET';
+export const UTIL_RESET = 'UTILITY_RESET'; 

@@ -18,7 +18,7 @@ export default ({
 			.map(company => (
 				<li
 					key={company.id}
-					onClick={() => idClicked(company.id)}
+					onClick={() => idClicked(company)}
 					className={[
 						'companies',
 						isSelected && selectedCompany === company.id ? 'active' : ''

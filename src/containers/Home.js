@@ -10,8 +10,8 @@ import '../css/Home.css';
 class Home extends Component {
 
 	renderReports(data) {
-		const { query } = this.props.search;
-		const { deleteReport } = this.props;
+		const { deleteReport, history, search } = this.props;
+		const { query } = search;
 
 		const filter = report =>
 			report.candidateName.toLowerCase().includes(query.toLowerCase());
@@ -23,7 +23,8 @@ class Home extends Component {
 					key={report.id}
 					handleDelete={deleteReport}
 					initModal={initModal} 
-					{...report} 
+					{...report}
+					history={history}
 				/>);
 	}
 
@@ -32,9 +33,8 @@ class Home extends Component {
 	}
 
 	render() {
-		const { searching, reports } = this.props;
+		const { searching, reports, history } = this.props;
 		const { isLoading, data } = reports;
-
 		return (
 			<div className="candidates-list-wrapper">
 				<Search searchQueryHandler={searching} />

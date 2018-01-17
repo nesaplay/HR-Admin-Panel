@@ -35,7 +35,8 @@ class Wizzard extends Component {
 	}
 
 	uploadReport = report => {
-		const { users, companies } = this.props.wizzard;
+		const { uploadReport, history, wizzard } = this.props;
+		const { users, companies } = wizzard;
 
 		report.candidateId = users.selectedUser;
 		report.candidateName = users.data.filter(
@@ -46,7 +47,8 @@ class Wizzard extends Component {
 			company => company.id === report.companyId
 		)[0].name;
 
-		this.props.uploadReport(report);
+		uploadReport(report);
+		history.push('/');
 	};
 
 	componentDidMount() {
@@ -68,7 +70,11 @@ class Wizzard extends Component {
 		return (
 			<div className="wizzard-wrapper">
 				<div className="wizzard-nav">
-					<WizzardNav stage={stage} />
+					<WizzardNav
+						stage={stage}
+						user={users.selectedUser}
+						company={companies.selectedCompany}
+					/>
 				</div>
 				<div className="wizzard-content">
 					{stage &&
@@ -80,7 +86,7 @@ class Wizzard extends Component {
 							<UserList
 								{...users}
 								{...search}
-								idClicked={id => userSelected(id)}
+								idClicked={user => userSelected(user)}
 							/>
 						)}
 					{stage &&
@@ -88,7 +94,7 @@ class Wizzard extends Component {
 							<CompanyList
 								{...companies}
 								{...search}
-								idClicked={id => companySelected(id)}
+								idClicked={company => companySelected(company)}
 							/>
 						)}
 					{stage &&
