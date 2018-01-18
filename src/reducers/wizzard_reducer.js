@@ -8,8 +8,11 @@ import {
 	FETCH_COMPANIES,
 	FETCH_COMPANIES_SUCCESS,
 	FETCH_COMPANIES_ERROR,
-    COMPANY_SELECTED,
-    WIZZARD_RESET
+	COMPANY_SELECTED,
+	WIZZARD_RESET,
+	REPORT_DATE_ERROR,
+	REPORT_NOTE_ERROR,
+	REPORT_VALIDATED
 } from '../actions/types';
 
 const initState = {
@@ -31,9 +34,10 @@ const initState = {
 		error: null
 	},
 	report: {
-		data: {},
+		date: null,
+		note: null,
 		isCompleted: false,
-		error: null
+		error: false
 	}
 };
 
@@ -133,6 +137,38 @@ export default function(state = initState, action) {
 				}
 			};
 
+		// report sub-reducer
+		case REPORT_DATE_ERROR:
+			return {
+				...state,
+				report: {
+					date: action.error,
+					note: null,
+					isCompleted: false,
+					error: true
+				}
+			};
+		case REPORT_NOTE_ERROR:
+			return {
+				...state,
+				report: {
+					date: null,
+					note: action.error,
+					isCompleted: false,
+					error: true
+				}
+			};
+		case REPORT_VALIDATED:
+			return {
+				...state,
+				report: {
+					date: null,
+					notes: null,
+					isCompleted: true,
+					error: false
+				}
+			};
+
 		// utilities sub-reducer
 		case STAGE_UP:
 			return {
@@ -146,7 +182,7 @@ export default function(state = initState, action) {
 			};
 		case WIZZARD_RESET:
 			return initState;
-			
+
 		default:
 			return state;
 	}

@@ -7,8 +7,6 @@ import createSagaMiddleware from 'redux-saga';
 
 import registerServiceWorker from './registerServiceWorker';
 import './css/index.css';
-import 'react-dates/initialize';
-import 'react-dates/lib/css/_datepicker.css';
 import reducers from './reducers';
 import rootSaga from './sagas/index';
 import App from './routes/App';

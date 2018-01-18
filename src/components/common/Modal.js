@@ -28,8 +28,6 @@ export default function(parent) {
         // Initialize our event listeners
         initializeEvents.call(this)
 
-        window.getComputedStyle(this.modal).height
-
         this.modal.className =
             this.modal.className +
             (this.modal.offsetHeight > window.innerHeight

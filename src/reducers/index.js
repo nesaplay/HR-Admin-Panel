@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
+
 import search from './search_reducer';
 import reports from './reports_reducer';
 import util from './utility_reducer';

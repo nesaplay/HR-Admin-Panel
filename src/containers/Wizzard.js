@@ -7,7 +7,6 @@ import FillReport from '../components/wizzard/FillReport';
 import WizzardNav from '../components/wizzard/WizzardNav';
 import Search from '../components/common/Search';
 import * as actions from '../actions/index';
-
 import '../css/Wizzard.css';
 
 class Wizzard extends Component {
@@ -30,22 +29,41 @@ class Wizzard extends Component {
 		if (stage === 2 && activeCompany) {
 			return true;
 		}
-
 		return false;
 	}
 
-	uploadReport = report => {
-		const { uploadReport, history, wizzard } = this.props;
-		const { users, companies } = wizzard;
+	validateReport = ({ note, date }) => {
+		const {
+			reportDateError,
+			reportNoteError,
+			reportValidated
+		} = this.props;
 
-		report.candidateId = users.selectedUser;
-		report.candidateName = users.data.filter(
-			user => user.id === report.candidateId
-		)[0].name;
-		report.companyId = companies.selectedCompany;
-		report.companyName = companies.data.filter(
-			company => company.id === report.companyId
-		)[0].name;
+		if (date) {
+			reportDateError(date);
+			return;
+		}
+		if (note) {
+			reportNoteError(note);
+			return;
+		}
+
+		reportValidated()
+
+	}
+
+	uploadReport = details => {
+		const { uploadReport, history, wizzard } = this.props;
+		const { selectedUser } = wizzard.users;
+		const { selectedCompany } = wizzard.companies;
+
+		const report = {
+			...details,
+			candidateId: selectedUser.id,
+			candidateName: selectedUser.name,
+			companyId: selectedCompany.id,
+			companyName: selectedCompany.name
+		}
 
 		uploadReport(report);
 		history.push('/');
@@ -77,46 +95,28 @@ class Wizzard extends Component {
 					/>
 				</div>
 				<div className="wizzard-content">
-					{stage &&
-						stage !== 3 && (
-							<Search searchQueryHandler={searching} />
-						)}
-					{stage &&
-						stage === 1 && (
-							<UserList
-								{...users}
-								{...search}
-								idClicked={user => userSelected(user)}
-							/>
-						)}
-					{stage &&
-						stage === 2 && (
-							<CompanyList
-								{...companies}
-								{...search}
-								idClicked={company => companySelected(company)}
-							/>
-						)}
-					{stage &&
-						stage === 3 && (
-							<FillReport
-								{...wizzard}
-								submitForm={this.uploadReport}
-							/>
-						)}
+					{stage && stage !== 3 && <Search searchQueryHandler={searching} />}
+					{stage && stage === 1 && <UserList
+												{...users}
+												{...search}
+												idClicked={user => userSelected(user)}/>}
+					{stage && stage === 2 && <CompanyList
+												{...companies}
+												{...search}
+												idClicked={company => companySelected(company)}/>}
+					{stage && stage === 3 && <FillReport
+												{...wizzard}
+												submitForm={this.uploadReport}
+												onError={this.validateReport}/>}
 					<div className="wizzard-content-nav">
 						<button
 							disabled={stage && stage === 1 ? 'disabled' : ''}
-							onClick={stageDown}
-						>
-							back
+							onClick={stageDown}>back
 						</button>
 						<button
 							disabled={this.buttonStatus() ? '' : 'disabled'}
 							className={stage && stage === 3 ? 'hide' : ''}
-							onClick={stageUp}
-						>
-							next
+							onClick={stageUp}>next
 						</button>
 					</div>
 				</div>

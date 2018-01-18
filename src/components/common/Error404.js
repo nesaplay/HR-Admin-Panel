@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Error404 = () => {
-	return (
+const Error404 = () => (
 		<div>
 			<h2>Pssst... you shouldnt be here.</h2>
 			<p>
@@ -10,6 +9,5 @@ const Error404 = () => {
 			</p>
 		</div>
 	);
-};
 
 export default Error404;

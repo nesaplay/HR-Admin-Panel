@@ -13,4 +13,17 @@
   background-size: 30px 25px;
   background-position: left; }
 
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 300px) {
+  .search-field input {
+    width: 100px; } }
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) {
+  .search-field input {
+    width: 175px; } }
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+  .search-field input {
+    width: 250px; } }
+
 /*# sourceMappingURL=Search.css.map */

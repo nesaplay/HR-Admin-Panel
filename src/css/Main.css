@@ -7,4 +7,17 @@ main {
   margin: 0 auto;
   max-width: 1024px; }
 
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 300px) {
+  .main-wrapper {
+    padding: 10px 15px; } }
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) {
+  .main-wrapper {
+    padding: 15px 30px; } }
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+  .main-wrapper {
+    padding: 20px 50px; } }
+
 /*# sourceMappingURL=Main.css.map */

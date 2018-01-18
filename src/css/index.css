@@ -9,8 +9,10 @@ html {
   color: #04030F;
   box-sizing: border-box; }
 
-*::after, *::before {
+* {
   box-sizing: border-box; }
+  *::after, *::before {
+    box-sizing: border-box; }
 
 #root {
   display: flex;

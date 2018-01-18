@@ -10,7 +10,7 @@ import '../css/Home.css';
 class Home extends Component {
 
 	renderReports(data) {
-		const { deleteReport, history, search } = this.props;
+		const { deleteReport, search } = this.props;
 		const { query } = search;
 
 		const filter = report =>
@@ -24,7 +24,6 @@ class Home extends Component {
 					handleDelete={deleteReport}
 					initModal={initModal} 
 					{...report}
-					history={history}
 				/>);
 	}
 
@@ -33,12 +32,12 @@ class Home extends Component {
 	}
 
 	render() {
-		const { searching, reports, history } = this.props;
+		const { searching, reports } = this.props;
 		const { isLoading, data } = reports;
 		return (
 			<div className="candidates-list-wrapper">
 				<Search searchQueryHandler={searching} />
-				{isLoading ? <p>Loading ...</p> : this.renderReports(data)}
+				{isLoading ? <div className="loader"/> : this.renderReports(data)}
 			</div>
 		);
 	}
